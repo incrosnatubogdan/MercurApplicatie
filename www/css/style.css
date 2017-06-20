@@ -7,6 +7,30 @@
     width: 50px;
 }
 
+img.avatar.motion.spin.fade {
+    display: none;
+}
+
+span.ng-binding {
+    display: none;
+}
+
+p.ng-binding {
+    display: none;
+}
+
+button.button.button-stable.button-clear.button-block.button-small.icon.ion-plus {
+    display: none;
+}
+
+button.button.button-stable.button-clear.button-block.icon.ion-minus {
+    display: none;
+}
+
+
+
+
+
 
 
 .link {
