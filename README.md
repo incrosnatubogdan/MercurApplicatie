@@ -1,4 +1,6 @@
 # Ionic Firebase Shopping Cart App 
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/incrosnatubogdan/MercurApplicatie.svg)](https://greenkeeper.io/)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/arjunsk/ionic-firebase-shopping-cart)
 
 ### FoodKart V0.3
