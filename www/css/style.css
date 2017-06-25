@@ -2,9 +2,9 @@
 .app-icon {
     background: rgba(0, 0, 0, 0) url("../img/app-icon.png") repeat scroll center center / cover ;
     border-radius: 0%;
-    height: 50px;
+    height: 294px;
     margin: 0 auto;
-    width: 50px;
+    width: 400px;
 }
 
 img.avatar.motion.spin.fade {
@@ -15,17 +15,11 @@ span.ng-binding {
     display: none;
 }
 
-p.ng-binding {
+div.user-heading.round {
     display: none;
 }
 
-button.button.button-stable.button-clear.button-block.button-small.icon.ion-plus {
-    display: none;
-}
 
-button.button.button-stable.button-clear.button-block.icon.ion-minus {
-    display: none;
-}
 
 
 

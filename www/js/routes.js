@@ -94,6 +94,12 @@ angular.module('app.routes', [])
       }
     }
   })
+  
+  .state('filterby', {
+    url: '/page17',
+    templateUrl: 'templates/filterBy.html',
+    controller: 'filterByCtrl'
+    })
 
 $urlRouterProvider.otherwise('/page1/page5')
 

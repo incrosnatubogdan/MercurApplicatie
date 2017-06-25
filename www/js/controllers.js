@@ -501,19 +501,11 @@ angular.module('app.controllers', [])
       }
     });
 
-    $scope.payments = [
-      {id: 'CREDIT', name: 'Credit Card'},
-      {id: 'NETBANK', name: 'Net Banking'},
-      {id: 'COD', name: 'COD'}
-    ];
 
     $scope.pay=function(address,payment){
 
-      if(address==null || payment==null){
-        //Check if the checkboxes are selected ?
-        sharedUtils.showAlert("Error","Please choose from the Address and Payment Modes.")
-      }
-      else {
+      
+      
         // Loop throw all the cart item
         for (var i = 0; i < sharedCartService.cart_items.length; i++) {
           //Add cart item to order table
@@ -531,8 +523,6 @@ angular.module('app.controllers', [])
             //Order data
             user_id: $scope.user_info.uid,
             user_name:$scope.user_info.displayName,
-            address_id: address,
-            payment_id: payment,
             status: "Queued"
           });
 
@@ -548,7 +538,7 @@ angular.module('app.controllers', [])
           historyRoot: true
         });
         $state.go('lastOrders', {}, {location: "replace", reload: true});
-      }
+      
     }
 
 
@@ -617,4 +607,3 @@ angular.module('app.controllers', [])
 
 
   })
-
