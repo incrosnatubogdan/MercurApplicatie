@@ -1,11 +1,7 @@
 <ion-view style="" class=" " id="page9" title="My Cart">
     <ion-content class="has-header" padding="true">
 
-      <div>
-        <p>Total ( {{get_qty()}} ) =
-          <strong> &#8377; {{total_amount}}</strong>
-        </p>
-      </div>
+      
       <button ng-click="checkout()" class="button button-assertive button-block ">Check Out</button>
 
       <div ng-repeat="item in cart"   >
@@ -16,9 +12,6 @@
             <img ng-src="{{'img/fk/'+ item.item_image +'.jpg'}}" width="100%" height="auto" style="box-shadow: none;">
             <form class="list"></form>
             <div>
-              <p>{{item.item_qty}} x &#8377; {{item.item_price}} =
-                <strong> &#8377; {{ item.item_qty *  item.item_price  }}</strong>
-              </p>
             </div>
             <div class="button-bar" style="box-shadow: none;">
               <button ng-click="removeFromCart(item.$id)" class="button button-assertive button-block button-small icon ion-android-delete" ></button>

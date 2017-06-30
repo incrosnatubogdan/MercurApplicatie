@@ -1,5 +1,21 @@
 {
   "name": "foodkart",
-  "app_id": "272277d5",
-  "type": "ionic1"
+  "app_id": "0de97e82",
+  "type": "ionic1",
+  "watch": {
+    "sass": [
+      "scss/**/*.scss"
+    ],
+    "html": [
+      "www/**/*.html"
+    ],
+    "livereload": [
+      "www/**/*.html",
+      "www/**/*.js",
+      "www/**/*.css"
+    ]
+  },
+  "watchPatterns": [
+    "scss/**/*"
+  ]
 }

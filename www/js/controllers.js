@@ -170,9 +170,12 @@ angular.module('app.controllers', [])
     sharedUtils.hideLoading();
   }
 
-  $scope.showProductInfo=function (id) {
-
-  };
+  $scope.showProductInfo=function (name,description,image) {	 
+		 sessionStorage.setItem('product_info_description', description);
+		 sessionStorage.setItem('product_info_image', image);
+		 sessionStorage.setItem('product_info_name', name);
+		 window.location.href = "#/page13";
+	 };
   $scope.addToCart=function(item){
     sharedCartService.add(item);
   };
@@ -295,6 +298,11 @@ angular.module('app.controllers', [])
 
     $rootScope.extras = true;
     sharedUtils.showLoading();
+	
+	$scope.removeRecord = function (user) {
+    user.hide=true;
+    alert('hide this li');
+};
 
     //Check if user already logged in
     firebase.auth().onAuthStateChanged(function (user) {
@@ -308,13 +316,15 @@ angular.module('app.controllers', [])
             $scope.orders = snapshot.val();
             $scope.$apply();
           });
+		  
+	   var fb_query= firebase.database().ref('orders')
+      .orderByChild('user_id')
+      .startAt($scope.user_info.uid).endAt($scope.user_info.uid);
           sharedUtils.hideLoading();
       }
     });
-
-
-
-
+	
+	
 
 })
 
@@ -523,7 +533,7 @@ angular.module('app.controllers', [])
             //Order data
             user_id: $scope.user_info.uid,
             user_name:$scope.user_info.displayName,
-            status: "Queued"
+            status: "Waiting"
           });
 
         }

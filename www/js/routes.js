@@ -75,7 +75,7 @@ angular.module('app.routes', [])
 
   .state('support', {
     url: '/page13',
-    templateUrl: 'templates/support.html',
+    templateUrl: 'templates/product.html',
     controller: 'supportCtrl'
   })
 
