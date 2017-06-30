@@ -170,12 +170,9 @@ angular.module('app.controllers', [])
     sharedUtils.hideLoading();
   }
 
-  $scope.showProductInfo=function (name,description,image) {	 
-		 sessionStorage.setItem('product_info_description', description);
-		 sessionStorage.setItem('product_info_image', image);
-		 sessionStorage.setItem('product_info_name', name);
-		 window.location.href = "#/page13";
-	 };
+  $scope.showProductInfo=function (id) {
+
+  };
   $scope.addToCart=function(item){
     sharedCartService.add(item);
   };
@@ -298,11 +295,6 @@ angular.module('app.controllers', [])
 
     $rootScope.extras = true;
     sharedUtils.showLoading();
-	
-	$scope.removeRecord = function (user) {
-    user.hide=true;
-    alert('hide this li');
-};
 
     //Check if user already logged in
     firebase.auth().onAuthStateChanged(function (user) {
@@ -316,15 +308,13 @@ angular.module('app.controllers', [])
             $scope.orders = snapshot.val();
             $scope.$apply();
           });
-		  
-	   var fb_query= firebase.database().ref('orders')
-      .orderByChild('user_id')
-      .startAt($scope.user_info.uid).endAt($scope.user_info.uid);
           sharedUtils.hideLoading();
       }
     });
-	
-	
+
+
+
+
 
 })
 
@@ -410,7 +400,7 @@ angular.module('app.controllers', [])
 
         if(edit_val!=null) {
           //Update  address
-          if(res!=null){ // res ==null  => close 
+          if(res!=null){ // res ==null  => close
             fireBaseData.refUser().child($scope.user_info.uid).child("address").child(edit_val.$id).update({    // set
               nickname: res.nickname,
               address: res.address,
@@ -514,8 +504,8 @@ angular.module('app.controllers', [])
 
     $scope.pay=function(address,payment){
 
-      
-      
+
+
         // Loop throw all the cart item
         for (var i = 0; i < sharedCartService.cart_items.length; i++) {
           //Add cart item to order table
@@ -533,8 +523,14 @@ angular.module('app.controllers', [])
             //Order data
             user_id: $scope.user_info.uid,
             user_name:$scope.user_info.displayName,
-            status: "Waiting"
+            status: "Queued"
+
           });
+          //fireBaseData.refOrder().child($scope.cart_items[i].item_qty).remove();
+
+
+
+
 
         }
 
@@ -548,7 +544,7 @@ angular.module('app.controllers', [])
           historyRoot: true
         });
         $state.go('lastOrders', {}, {location: "replace", reload: true});
-      
+
     }
 
 
