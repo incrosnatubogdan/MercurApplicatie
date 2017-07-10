@@ -2,7 +2,7 @@
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/arjunsk/ionic-firebase-shopping-cart)
 
 ### Mercur App
-![FoodKart V0.3 ](/fk-latest.png)
+
 
 #### Features:
     1. Product List from database (working)
